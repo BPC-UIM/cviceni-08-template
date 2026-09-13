@@ -1,0 +1,17 @@
+gates:                     # vahy a bias hradel -- DOPLNTE sami podle vlastniho odvozeni
+  and:   {weights: null, bias: null}    # priklady_08.md, priklad 2b
+  or:    {weights: null, bias: null}    # priklady_08.md, priklad 2c
+  imply: {weights: null, bias: null}    # priklady_08.md, priklad 2h
+  xor:   {weights: null, bias: null}    # priklady_08.md, priklad 4 -- zadna volba nedava 100 %
+  xnor:  {weights: null, bias: null}    # priklady_08.md, priklad 4 -- stejny dukaz jako XOR
+
+data:
+  feature_index: 0          # ktery priznak breast-cancer datasetu pro 1D logistickou regresi (0..29)
+  random_state: 42          # seed pro reprodukovatelne deleni/vyber dat
+
+sigmoid:
+  temperature: 1.0          # teplota sigmoidy; male cislo -> blizi se tvrdemu stupni (Step)
+
+exploration:
+  weight_sweep: {start: 0.5, stop: 3.5, step: 0.25}       # demonstrace rotace hranice pri zmene vahy
+  temperature_sweep: [0.001, 0.01, 0.05, 0.1, 0.2, 0.3]    # prechod tvrda -> hladka hranice
